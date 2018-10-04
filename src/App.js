@@ -1,27 +1,20 @@
 import React, { Component } from "react";
-import UserName from "./components/username";
+import UserContainer from "./components/usercontainer";
 import $ from "jquery";
+import "bootstrap/dist/css/bootstrap.css";
+import Navigation from "./components/navigation";
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {};
-  }
-  showUser() {
-    const urlString = "http://localhost:3000/users";
-    console.log("Data Successfully fetched");
-    $.ajax({
-      url: urlString
-    });
-  }
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <h1 className="App-title" />
-        </header>
-        <p className="App-intro" />
+      <div className="container">
+        <Navigation />
+        <div className="App">
+          <header className="App-header">
+            <h1 className="App-title" />
+          </header>
+          <UserContainer />
+        </div>
       </div>
     );
   }
